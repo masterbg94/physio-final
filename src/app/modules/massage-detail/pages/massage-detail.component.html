@@ -1,0 +1,12 @@
+<div class="therapy-container">
+    <div class="therapy-content">
+        <div class="description-img">
+            <img [src]="item.pic" alt="">
+        </div>
+        <div class="description-text">
+            <h2 style="text-align: center">{{item.name| translate}}</h2>
+            <div class="bind-description" [innerHTML]="item.description | translate" ></div>
+        </div>
+    </div>
+</div>
+<app-reserve-contact></app-reserve-contact>
