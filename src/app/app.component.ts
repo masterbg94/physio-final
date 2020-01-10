@@ -5,7 +5,7 @@ import {map, share} from 'rxjs/operators';
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
 
 import {TranslateService} from '@ngx-translate/core';
-import { UserService } from './core/services/user.service';
+import {UserService} from './core/services/user.service';
 
 @Component({
     selector: 'app-root',
@@ -13,15 +13,14 @@ import { UserService } from './core/services/user.service';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    constructor(private breakpointObserver: BreakpointObserver , public translate: TranslateService, public userService: UserService) {
+    constructor(private breakpointObserver: BreakpointObserver, public translate: TranslateService, public userService: UserService) {
         this.innerWidth = window.innerWidth;
 
         translate.addLangs(['en', 'de']);
-        translate.setDefaultLang('en');
+        translate.setDefaultLang('de');
 
         const browserLang = translate.getBrowserLang();
-        this.userService.currentLanguage.next('en');
-        translate.use(browserLang.match(/en|de/) ? browserLang : 'en');
+        this.userService.currentLanguage.next('de');
     }
 
     toggleAb: boolean;
@@ -121,14 +120,14 @@ export class AppComponent {
 
     lng: any[] = [
         {
-            value: 'en',
-            name: 'English',
-            img: '../../../../assets/img/english.png'
-        },
-        {
             value: 'de',
             name: 'Deutsch',
             img: '../../../../assets/img/switzerland.png'
+        },
+        {
+            value: 'en',
+            name: 'English',
+            img: '../../../../assets/img/english.png'
         }
     ];
 
@@ -139,6 +138,7 @@ export class AppComponent {
     setLanguage(lang) {
         this.translate.use(lang.value);
         this.current = lang;
+        this.userService.currentLanguage.next(lang.value);
     }
 
     toggleLang() {

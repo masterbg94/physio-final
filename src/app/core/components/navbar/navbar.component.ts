@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {TranslateService} from '@ngx-translate/core';
 import {UserService} from '../../services/user.service';
@@ -10,7 +10,7 @@ import {UserService} from '../../services/user.service';
 })
 export class NavbarComponent {
 
-    constructor(public translate: TranslateService, public userService:UserService) {
+    constructor(public translate: TranslateService, public userService: UserService) {
     }
 
     toggler = false;
@@ -20,14 +20,15 @@ export class NavbarComponent {
 
     lng: any[] = [
         {
-            value: 'en',
-            name: 'English',
-            img: '../../../../assets/img/english.png'
-        },
-        {
             value: 'de',
             name: 'Deutsch',
             img: '../../../../assets/img/switzerland.png'
+        }
+        ,
+        {
+            value: 'en',
+            name: 'English',
+            img: '../../../../assets/img/english.png'
         }
     ];
 
@@ -110,7 +111,7 @@ export class NavbarComponent {
         }
     ];
 
-  toggleLang() {
+    toggleLang() {
         this.langOpen = !this.langOpen;
     }
 

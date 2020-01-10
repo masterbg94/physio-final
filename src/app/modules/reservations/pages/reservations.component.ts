@@ -22,14 +22,14 @@ export class ReservationsComponent implements OnInit {
     ngOnInit(): void {
         this.userService.currentLanguage.subscribe(lang => {
             this.currentLanguage = lang;
-            if (lang === 'en') {
+            if (lang === 'de') {
                 this.renderer.setStyle(this.container1.nativeElement, 'display', 'none');
-                this.initialCalendly(this.container.nativeElement, 'https://calendly.com/info-12177/reservation');
+                this.initialCalendly(this.container.nativeElement, 'https://calendly.com/info-12177/reservation1');
                 this.renderer.setStyle(this.container.nativeElement, 'display', 'block');
             } else {
                 this.renderer.setStyle(this.container.nativeElement, 'display', 'none');
                 this.renderer.setStyle(this.container1.nativeElement, 'display', 'block');
-                this.initialCalendly(this.container1.nativeElement, 'https://calendly.com/info-12177/reservation1');
+                this.initialCalendly(this.container1.nativeElement, 'https://calendly.com/info-12177/reservation');
             }
         });
     }
