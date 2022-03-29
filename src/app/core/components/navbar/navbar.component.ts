@@ -102,8 +102,8 @@ export class NavbarComponent {
             name: 'Phylosophy'
         },
         {
-            path: 'about-me',
-            name: 'About me'
+            path: 'team',
+            name: 'Team'
         },
         {
             path: 'practice',

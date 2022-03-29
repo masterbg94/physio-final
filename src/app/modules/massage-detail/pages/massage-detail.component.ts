@@ -107,11 +107,13 @@ export class MassageDetailComponent implements OnInit {
             pic: '../../../assets/img/pics/_XT22856.jpg'
         },
         {
-            path: 'about-me',
-            name: 'About me',
+            path: 'team',
+            name: 'Team',
             description: 'about me-detail',
-            pic: '../../../assets/img/pics/_XT23063-2.png'
-        }
+            pic: '../../../assets/img/pics/_XT23063-2.png',
+            team1Description: 'about second-detail',
+            pic1: '../../../assets/img/pics/Katerina_Novotna.jpeg'
+        },
     ];
 
     public val: any;
